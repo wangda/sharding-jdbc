@@ -122,6 +122,8 @@ public final class ResultSetUtil {
                 } else {
                     return new BigDecimal(number.toString());
                 }
+            case "java.lang.Object":
+                return value;
             default:
                 throw new ShardingJdbcException("Unsupported data type:%s", convertType);
         }
